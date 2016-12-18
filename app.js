@@ -8,7 +8,10 @@ app.get('/', function(req, res) {
 })
 
 var appCallback = function() {
+  console.log('server.address().port: ' + server.address().port)
   console.log('word-associations listening on port ' + defaultPort)
 }
 
-app.listen(defaultPort, appCallback)
+var server = app.listen(defaultPort, appCallback)
+
+console.log('app.listen() executed.')
