@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/techtabor/word-associations/issues"
   },
-  "homepage": "https://github.com/techtabor/word-associations#readme"
+  "homepage": "https://github.com/techtabor/word-associations#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
 }
