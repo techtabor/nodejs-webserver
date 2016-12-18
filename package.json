@@ -1,0 +1,22 @@
+{
+  "name": "word-associations",
+  "version": "1.0.0",
+  "description": "simple node.js webserver able to store chain of associated words",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/techtabor/word-associations.git"
+  },
+  "keywords": [
+    "learning"
+  ],
+  "author": "techtabor",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/techtabor/word-associations/issues"
+  },
+  "homepage": "https://github.com/techtabor/word-associations#readme"
+}
