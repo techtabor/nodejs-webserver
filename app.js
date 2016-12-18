@@ -3,10 +3,14 @@ var app = express()
 
 var defaultPort = 3000
 
+var server = app.listen(defaultPort, function() {
+  console.log('word-associations listening on port ' + defaultPort)
+})
+
 app.get('/title', function(req, res) {
   res.send('word-associations')
 })
 
-var server = app.listen(defaultPort, function() {
-  console.log('word-associations listening on port ' + defaultPort)
+app.get('/words', function(req, res) {
+  res.send('words:')
 })
