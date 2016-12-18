@@ -1,6 +1,8 @@
 var express = require('express')
 var app = express()
 
-app.listen(3000, function () {
-  console.log('word-associations app listening on port 3000')
+var defaultPort = 3000
+
+app.listen(defaultPort, function () {
+  console.log('word-associations app listening on port ' + defaultPort)
 })
