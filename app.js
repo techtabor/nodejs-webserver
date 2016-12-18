@@ -7,6 +7,4 @@ app.get('/', function(req, res) {
   res.send('word-associations')
 })
 
-app.listen(defaultPort, function () {
-  console.log('word-associations app listening on port ' + defaultPort)
-})
+app.listen(defaultPort)
