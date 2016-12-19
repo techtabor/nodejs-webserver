@@ -111,6 +111,8 @@ app.get('/words', (req, res) => {
 })
 ```
 
+## third steps: use your own server
+
 * start your server and get the sent result from another node.js script
 
 ``` javascript
