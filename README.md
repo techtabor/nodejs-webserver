@@ -1,12 +1,52 @@
 # word-associations
 simple node.js webserver for learning some basic concepts
 
+## first steps: use someone else's webserver
+
 * open gitbash (or terminal on mac)
 * `git clone https://github.com/techtabor/word-associations.git`
 * `cd word-associations`
 * `npm install`: this will install dependencies, namely `express` npm package
   * what is express?
-  * web framework for node.js
+* `() => {}` is a shorthand for `function() {}` javascript function definition
+* type `node getPublicAPI.js` in your terminal
+* it gets the response from a publicly available webserver
+* what is the first param of the `https.get` function?
+* what is the second param of the `https.get` function?
+  * it is a so called callback function
+  * callback: it will be CALLED when the main part of the function has been executed and returned BACK its result
+  * callback functions in javascript are a solution to handle asynchronous function calls
+  * the `https.get` function is asynchronous, it may run parallel with other commands. Still, you want to handle the result exactly right after it is received. So you put in the callback function.
+  * it is called after: test it with using the result inside the callback function
+
+  ``` javascript
+  var handleRequestResult = (res) => {
+    console.log(result)
+    res.on('data', (d) => {
+      console.log('BODY in result of https request: ' + d)
+    })
+  }
+
+  var result = https.get('https://api.ipify.org', handleRequestResult)
+  ```
+  * if you would try to handle the result in a simple, not callback function: it would not work as the handling will be executed sooner than the https get request is received.
+
+  ``` javascript
+  var https = require('https')
+
+  var handleRequestResult = (res) => {
+    res.on('data', (d) => {
+      console.log('BODY in result of https request: ' + d)
+    })
+  }
+
+  var result = https.get('https://api.ipify.org')
+
+  handleRequestResult(result)
+  ```
+
+## second steps: create your own webserver
+
 * create `app.js` file with the following
 
 ``` javascript
@@ -17,8 +57,6 @@ app.listen(3000, () => {
   console.log('word-associations app listening on port 3000')
 })
 ```
-
-* `() => {}` is a shorthand for `function() {}` javascript function definition
 
 * type `node app.js` in your terminal
 * what do you see if you open `localhost:3000` in your browser?
@@ -54,19 +92,6 @@ app.get('/', (req, res) => {
 
 ``` javascript
 app.listen(defaultPort)
-```
-
-* this function would be called last: you can rely on results inside it.
-
-``` javascript
-var appCallback = () => {
-  console.log('server.address().port: ' + server.address().port)
-  console.log('word-associations listening on port ' + defaultPort)
-}
-
-var server = app.listen(defaultPort, appCallback)
-
-console.log('app.listen() executed.')
 ```
 
 * what is the req parameter? add the following line:

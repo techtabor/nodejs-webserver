@@ -6,4 +6,6 @@ var handleRequestResult = (res) => {
   })
 }
 
-https.get('https://api.ipify.org', handleRequestResult)
+var result = https.get('https://api.ipify.org')
+
+handleRequestResult(result)
