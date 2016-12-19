@@ -18,6 +18,8 @@ app.listen(3000, () => {
 })
 ```
 
+* `() => {}` is a shorthand for `function() {}` javascript function definition
+
 * type `node app.js` in your terminal
 * what do you see if you open `localhost:3000` in your browser?
 * what does localhost mean, what is the corresponding IP-address?
@@ -96,8 +98,8 @@ var httpOptions = {
 }
 
 var handleRequestResult = (res) => {
-  res.on('data', (chunk) => {
-    console.log('BODY in result of http request: ' + chunk)
+  res.on('data', (d) => {
+    console.log('BODY in result of http request: ' + d)
   })
 }
 
