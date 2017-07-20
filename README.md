@@ -1,10 +1,10 @@
-# word-associations
+# nodejs-webserver
 simple node.js webserver for learning some basic concepts
 
 ## first steps: use someone else's webserver
 
 * open gitbash (or terminal on mac)
-* `git clone https://github.com/techtabor/word-associations.git`
+* `git clone https://github.com/techtabor/nodejs-webserver.git`
 * `cd word-associations`
 * `npm install`: this will install dependencies, namely `express` npm package
   * what is express?
@@ -54,7 +54,7 @@ var express = require('express')
 var app = express()
 
 app.listen(3000, () => {
-  console.log('word-associations app listening on port 3000')
+  console.log('nodejs-webserver app listening on port 3000')
 })
 ```
 
@@ -72,7 +72,7 @@ app.listen(3000, () => {
 var defaultPort = 2016
 
 app.listen(defaultPort, () => {
-  console.log('word-associations app listening on port ' + defaultPort)
+  console.log('nodejs-webserver app listening on port ' + defaultPort)
 })
 ```
 
@@ -83,7 +83,7 @@ app.listen(defaultPort, () => {
 
 ``` javascript
 app.get('/', (req, res) => {
-  res.send('word-associations')
+  res.send('nodejs-webserver')
 })
 ```
 
@@ -99,7 +99,7 @@ app.listen(defaultPort)
 ``` javascript
 app.get('/', (req, res) => {
   console.log(req.headers)
-  res.send('word-associations')
+  res.send('nodejs-webserver')
 })
 ```
 
